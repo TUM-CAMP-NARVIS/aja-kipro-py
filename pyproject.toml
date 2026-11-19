@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aja-kipro"
+version = "0.1.0"
+description = "Control AJA Ki Pro recorders (Ki Pro GO, Ki Pro Ultra 12G) over their REST API: record, stop, status, storage and clip names"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.10"
+dependencies = []
+authors = [{ name = "Chair for Computer Aided Medical Procedures (CAMP), TUM" }]
+keywords = ["aja", "ki pro", "kipro", "recorder", "video"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Multimedia :: Video",
+]
+
+[project.urls]
+Repository = "https://github.com/TUM-CAMP-NARVIS/aja-kipro-py"
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+kipro = "aja_kipro.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
